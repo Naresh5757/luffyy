@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .switch-form {
+            margin-top: 15px;
+        }
+        .switch-form a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="signup-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <input type="text" id="signup-username" placeholder="Username" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+    <div class="switch-form">
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+</div>
+
+<div class="container" id="login-container" style="display: none;">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <div class="switch-form">
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    </div>
+</div>
+
+<script>
+    function showLogin() {
+        document.getElementById('signup-container').style.display = 'none';
+        document.getElementById('login-container').style.display = 'block';
+    }
+
+    function showSignup() {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('signup-container').style.display = 'block';
+    }
+
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Sign Up Successful!');
+        // Here you can add code to handle the signup process
+    });
+
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Login Successful!');
+        // Here you can add code to handle the login process
+    });
+</script>
+
+</body>
+</html>
